@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+
+<div>
+    
+    <h1>Edit Task</h1>
+        <div>
+          <form
+          action="/todos/editTodo/<%= todo._id %>?_method=PUT"
+          method="POST"
+          class="col-3"
+          >
+            <div class="mb-3">
+              <label for="cleaningArea" class="form-label">Cleaning Area</label>
+              <select id="cleaningArea" name="cleaningArea">
+                <option value="other" <%=todo.cleaningArea ==='other' ? 'selected' : '' %> >Other</option>
+                <option value="kitchen" <%=todo.cleaningArea ==='kitchen' ? 'selected' : '' %> >Kitchen</option>
+                <option value="bedroom" <%=todo.cleaningArea ==='bedroom' ? 'selected' : '' %> >Bedroom</option>
+                <option value="bathroom" <%=todo.cleaningArea ==='bathroom' ? 'selected' : '' %> >Bathroom</option>
+                <option value="dining" <%=todo.cleaningArea ==='dining room' ? 'selected' : '' %> >Dining Room</option>
+                <option value="living" <%=todo.cleaningArea ==='living room' ? 'selected' : '' %> >Living Room</option>
+              </select>
+            </div>
+            <div class="mb-3">
+                <label for="todoItem" class="form-label">Task</label>
+                <input type="text" class="form-control" id="todoItem" name="todoItem" value="<%= todo.todoItem %>">
+            </div>
+            <div class="mb-3">
+              <label for="dueDate" class="form-label">Due Date</label>
+              <input type="date" id="dueDate" name="dueDate" value="<%= todo.dueDate.toISOString().slice(0, 10) %>">
+            </div>
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <textarea class="form-control" id="comment" name="comment"><%= todo.comment %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+          </form>
+        </div>
+
+
+<%- include('partials/footer') -%>
