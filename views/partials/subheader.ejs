@@ -32,29 +32,27 @@
   <body>
     <header class="container">
 
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/todos/kitchen">Kitchen</a>
-        <a href="/todos/dining%20room">Dining Room</a>
-        <a href="/todos/living%20room">Living Room</a>
-        <a href="/todos/bathroom">Bathroom</a>
-        <a href="/todos/Bedroom">Bedroom</a>
-        <a href="/todos/other">Other</a>
-      </div>
-      <!-- Use any element to open the sidenav -->
-      <span class="menuicon" onclick="openNav()">&#9776;</span>
-
       <div class="text-center">
-        <h1 class="loggedInTitle"><a href="/">Clean Freaks</a></h1>
+        <h1 class="title"><a href="/">Clean Freaks</a></h1>
+        <span class="slogan">Clean now...</span>
 
         <nav>
           <!-- LOGIN/SIGNUP -->
-                  <span class="intro">
+                  <span>
                     <% var user; %>
                     <% user = user || undefined; %>
           
                     <%if (user) { %>
-                    <form class="removeForm" action="/logout" method="POST" id ="logout">
+                                      <!--
+                            /// CORRECT FILE WHEN UPLOADING FILES TO SERVER
+                            if (window.location.pathname == "/saved") {
+                              -->
+                      <% if ("a" == "v") { %>
+                        <i class="fa-solid fa-bookmark"></i>
+                      <% } else { %>
+                        <a href ="/saved"><i class="fa-regular fa-bookmark"></i></a>
+                      <% } %>
+                      hi, <a href="/"><%= user.userName %></a> /  <form class="removeForm" action="/logout" method="POST" id ="logout">
                         <input type="submit" value="logout">
                     </form>
                     <% } else { %>
@@ -62,7 +60,6 @@
                     <% } %>
                   </span>
                 </nav>
-
       </div>
+      
     </header>
-    <div class="scroll-up"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></div>

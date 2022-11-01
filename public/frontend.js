@@ -70,3 +70,13 @@ async function markUnComplete(){
         console.log(err)
     }
 }
+
+
+//menu bar  close and open
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}

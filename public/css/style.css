@@ -1,11 +1,148 @@
-header {
-	border-bottom: 1px solid #73AD21;
+body a{
+  text-decoration: none;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+main, footer {
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
 }
 
+/*header*/
+header {
+  background-color: #5fbcd1;
+	border-bottom: 1px solid #73AD21;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  color: white;
+}
+header .title {
+  font-family: 'Permanent Marker', 'Courier New', Courier, monospace;
+  font-size: 120px;
+  text-align: center;
+  line-height: 100px;
+  padding-top: 130px;
+  padding-bottom: 50px;
+  margin: 0;
+}
+header  .title a{
+  color: white;
+}
+
+header .slogan {
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  padding-left: 30px;
+}
+
+header nav {
+  margin: 0 0 50px 0;
+  padding: 5px 0 5px 0;
+  text-align: center;
+  background-color: #0ff2da;
+}
+header nav span a{
+  font-size: 40px;
+  font-weight: 900;
+  color: white;
+}
+header nav span a:hover {
+  color: #5fbcd1;
+}
+
+/*header - once logged in*/
+header .loggedInTitle {
+  font-family: 'Permanent Marker', 'Courier New', Courier, monospace;
+  font-size: 120px;
+  text-align: center;
+  line-height: 100px;
+  padding: 20px 0 50px 0;
+  margin: 0;
+}
+header  .loggedInTitle a{
+  color: white;
+}
+
+header .intro  {
+  font-size: 25px;
+  font-weight: 900;
+  color: #818181;
+}
+header #logout {
+  border: none;
+  background-color: #0ff2da;
+  display: flex;
+  justify-content: end;
+  padding-right: 50px;
+}
+header #logout input {
+  border: none;
+  height:max-content;
+  background-color: #81818100;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  font-size: 25px;
+  font-weight: 900;
+  color: white; 
+  cursor: pointer;
+}
+header #logout input:hover {
+  color: #5fbcd1;
+}
+
+/*footer*/
+footer{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+/*index*/
+.about{
+  margin: 20px 50px;
+  border: 2px dotted #0ff2da;
+}
+.about div {
+  padding: 20px 30px;
+  text-align: center;
+
+}
+.about div h2 {
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: underline;
+}
+.about div p {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.about div p a {
+  color: black;
+  font-weight: 900;
+  font-style: italic;
+}
+.about div p a:hover {
+  color: #5fbcd1;
+}
+/*login-signup form*/
+.loginsignup div .inputdata {
+  margin: 20px 50px;
+}
+
+/*alert*/
+.alert{
+  color: red;
+  font-size: 25px;
+}
+
+/*task complete*/
 .completed {
 	color: gray;
 	text-decoration: line-through;
 }
+
+/*scroll up button*/
 .scroll-up {
 	position: fixed;
 	right:0;
@@ -31,4 +168,50 @@ header {
 	display: inline;
 	border:0;
 	background-color: #fff;
+}
+
+/*menu bar*/
+header .menuicon {
+  font-size:30px;
+  cursor:pointer;
+  margin-top: 50px;
+  padding-left: 30px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
