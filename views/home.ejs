@@ -1,37 +1,39 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-    <p>Welcome, <%= user.userName %>!</p>
-    <p>Today is <%= date %>.</p>
-    <h1>Todos <span><a href="/add"><i class="fa-solid fa-circle-plus"></i></a></span></h1>
+<main class="maincontainer">
+    <h2>Welcome, <%= user.userName %>!</h2>
+    <h2>Today is <%= date %>.</h2>
+    <h1>Todos <span class="addbutton"><a href="/add"><i class="fa-solid fa-circle-plus"></i></a></span></h1>
 
 <!-- LOOPED -->
-    <div>
+    <div class="category">
     <% for(let j=0; j < cleaningArea.length; j++) {%>
-        <h3><%=cleaningArea[j]%></h3>
-        <% if (!lists[j][0]) {%>
-            <p>No tasks today.</p>
-        <% } else {%>
-        <ul>
-            <% for(let i=0; i < lists[j].length; i++) {%>
-                <li class="item" data-id='<%=lists[j][i]._id%>'>
-                    <% if(lists[j][i].completed === true) {%>
-                        <span class='task completed'><%= lists[j][i].todoItem %></span>
-                        <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
-                        <span class='fa fa-trash'></span><br>
-                        <span class='task completed'><%= lists[j][i].comment %></span>        
-                    <% }else{ %>
-                        <span class="task"><%= lists[j][i].todoItem %></span>
-                        <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
-                        <span class='fa fa-trash'></span><br>
-                        <span class='task'><%= lists[j][i].comment %></span>   
-                    <% } %>
-                </li>
-            <% } %>
-          
-            </ul>
-            <% } %>
-            <a href="/todos/<%= cleaningArea[j]%>">more</a>
+        <div class="box">
+            <h3><%=cleaningArea[j]%></h3>
+            <% if (!lists[j][0]) {%>
+                <p>No tasks today.</p>
+            <% } else {%>
+            <ul>
+                <% for(let i=0; i < lists[j].length; i++) {%>
+                    <li class="item" data-id='<%=lists[j][i]._id%>'>
+                        <% if(lists[j][i].completed === true) {%>
+                            <span class='task completed'><%= lists[j][i].todoItem %></span>
+                            <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
+                            <span class='fa fa-trash'></span><br>
+                            <span id="taskcomment" class='task completed'>Comment: <%= lists[j][i].comment %></span>        
+                        <% }else{ %>
+                            <span class="task"><%= lists[j][i].todoItem %></span>
+                            <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
+                            <span class='fa fa-trash'></span><br>
+                            <span id="taskcomment" class='task'>Comment: <%= lists[j][i].comment %></span>   
+                        <% } %>
+                    </li>
+                <% } %>
+            
+                </ul>
+                <% } %>
+                <a class="jsutify-end" href="/todos/<%= cleaningArea[j]%>">more &#8594;</a>
+        </div>
     <% } %>
     </div>
 

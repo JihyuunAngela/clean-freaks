@@ -160,7 +160,7 @@ footer{
   margin-left: 5px;
   padding: 5px;
 }
-.formlogin button {
+.formlogin button, .otherbutton {
   margin: 20px;
   padding: 5px;
   background-color: #0ff2da;
@@ -183,10 +183,100 @@ footer{
   margin-top: 20px;
 }
 
+/*loginpage*/
+.maincontainer{
+  margin: 30px 0;
+}
+.maincontainer h2 {
+  margin: 0 0 0 50px;
+  font-size: 25px;
+}
+.maincontainer h1 {
+  margin: 0 0 0 50px;
+  font-size: 50px;
+  text-align: center;
+}
+.addbutton a{
+  color: #5fbcd1;
+  background-color:white;
+  font-size: 40px;
+}
+.category {
+  font-size: 25px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.maincontainer h3 {
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 40px;
+  background-color: white;
+}
+.box {
+  background-color: #0ff2db;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  height: 350px;
+}
+.box p , .box ul li span, .box a {
+  font-size: 18px;
+  color: black;
+  padding-left: 10px;
+}
+.box p {
+  margin: 0;
+}
+.jsutify-end {
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+}
+.box a:hover {
+  color: white;
+}
+#taskcomment {
+  font-size: 15px;
+  font-style: italic;
+  color: #818181;
+}
+
 /*task complete*/
 .completed {
 	color: gray;
 	text-decoration: line-through;
+}
+/*add,edit*/
+.inputforms, .headingB {
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  margin-left: 50px;
+  text-align: center;
+}
+.headingB {
+  font-size: 40px;
+  padding: 5px;
+  text-decoration: underline;
+}
+.inputforms {
+  font-size: 25px;
+
+}
+#todoItem, #dueDate, #comment, #cleaningArea {
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+}
+
+/*task*/
+.task {
+  cursor: pointer;
 }
 
 /*scroll up button*/
@@ -261,4 +351,14 @@ header .menuicon {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+@media screen and (max-width: 1400px) {
+  .box {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .box {
+    width: 100%;
+  }
 }

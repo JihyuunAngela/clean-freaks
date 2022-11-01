@@ -1,40 +1,41 @@
 <%- include('partials/header') -%>
+<main class="maincontainer">
+    <h1><%= area %> <span class="addbutton"><a href="/add"><i class="fa-solid fa-circle-plus"></i></a></h1>
 
-<h1><%= area %></h1>
+    <h2>Today: <%= date %></h2>
+    <ul>
+        <% for(let i=0; i < due.length; i++) {%>
+            <li class="item" data-id='<%=due[i]._id%>'>
+                <% if(due[i].completed === true) {%>
+                    <span class='task completed'><%= due[i].todoItem %></span>
+                    <span class='fa fa-trash'></span><br>
+                    <span class='task completed'><%= due[i].comment %></span>
+                <% }else{ %>
+                    <span class="task"><%= due[i].todoItem %></span>
+                    <span class='fa fa-trash'></span><br>
+                    <span><%= due[i].comment %></span>
+                <% } %>    
 
-<h2>Today: <%= date %></h2>
-<ul>
-    <% for(let i=0; i < due.length; i++) {%>
-        <li class="item" data-id='<%=due[i]._id%>'>
-            <% if(due[i].completed === true) {%>
-                <span class='task completed'><%= due[i].todoItem %></span>
-                <span class='fa fa-trash'></span><br>
-                <span class='task completed'><%= due[i].comment %></span>
-            <% }else{ %>
-                <span class="task"><%= due[i].todoItem %></span>
-                <span class='fa fa-trash'></span><br>
-                <span><%= due[i].comment %></span>
-            <% } %>    
+            </li>
+        <% } %>
+    </ul>
+        
 
-        </li>
-    <% } %>
-</ul>
-    
-
-<h2>Future Dates</h2>
-<ul>
-    <% for(let i=0; i < futureDate.length; i++) {%>
-        <li class="item" data-id='<%=futureDate[i]._id%>'>
-            <% if(futureDate[i].completed === true) {%>
-                <span class='task completed'><%= futureDate[i].todoItem %> <%= futureDate[i].dueDate.toISOString().slice(0, 10) %></span>
-                <span class='fa fa-trash'></span><br>
-                <span class='task completed'><%= futureDate[i].comment %></span>
-            <% }else{ %>
-                <span class="task"><%= futureDate[i].todoItem %> <%= futureDate[i].dueDate.toISOString().slice(0, 10) %></span>
-                <span class='fa fa-trash'></span><br>
-                <span><%= futureDate[i].comment %></span>
-            <% } %>    
-        </li>
-    <% } %>
-</ul>
+    <h2>Future Dates</h2>
+    <ul>
+        <% for(let i=0; i < futureDate.length; i++) {%>
+            <li class="item" data-id='<%=futureDate[i]._id%>'>
+                <% if(futureDate[i].completed === true) {%>
+                    <span class='task completed'><%= futureDate[i].todoItem %> <%= futureDate[i].dueDate.toISOString().slice(0, 10) %></span>
+                    <span class='fa fa-trash'></span><br>
+                    <span class='task completed'><%= futureDate[i].comment %></span>
+                <% }else{ %>
+                    <span class="task"><%= futureDate[i].todoItem %> <%= futureDate[i].dueDate.toISOString().slice(0, 10) %></span>
+                    <span class='fa fa-trash'></span><br>
+                    <span><%= futureDate[i].comment %></span>
+                <% } %>    
+            </li>
+        <% } %>
+    </ul>
+</main>
 <%- include('partials/footer') -%>

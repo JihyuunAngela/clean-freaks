@@ -7,7 +7,7 @@ module.exports = {
       if (!req.user) {
         res.redirect("/login")
       } else {
-        res.render("add.ejs");
+        res.render("add.ejs", {user: req.user});
       }
     } catch (err) {
       console.log(err);
