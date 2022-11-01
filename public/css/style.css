@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
 main, footer {
   font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
 }
@@ -21,7 +22,7 @@ header .title {
   font-size: 120px;
   text-align: center;
   line-height: 100px;
-  padding-top: 130px;
+  padding-top: 150px;
   padding-bottom: 50px;
   margin: 0;
 }
@@ -94,7 +95,7 @@ header #logout input:hover {
 footer{
   display: flex;
   justify-content: flex-end;
-  padding-right: 30px;
+  padding: 10px 30px 10px 0;
 }
 
 /*index*/
@@ -107,10 +108,12 @@ footer{
   text-align: center;
 
 }
-.about div h2 {
+.headings {
   font-weight: 900;
   font-size: 40px;
+  margin: 0;
   text-decoration: underline;
+  text-align: center;
 }
 .about div p {
   font-size: 30px;
@@ -126,14 +129,58 @@ footer{
   color: #5fbcd1;
 }
 /*login-signup form*/
-.loginsignup div .inputdata {
-  margin: 20px 50px;
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+.formlogin{
+  font-size: 25px;
+  margin: 20px;
+  padding: 20px 30px;
+  border: 2px dotted #0ff2da;
+  display: flex;
+  flex-direction: column;
+}
+.formlogin .headings {
+  padding-bottom: 30px;
+}
+.formlogin div {
+  padding: 10px;
+}
+.form-text {
+  font-size: 15px;
+  color: #5fbcd1;
+}
+.formlogin div input, .exampleInputEmail1, .exampleInputPassword1 {
+  background-color: white;
+  border: 1px solid #818181;
+  color: #111;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin-left: 5px;
+  padding: 5px;
+}
+.formlogin button {
+  margin: 20px;
+  padding: 5px;
+  background-color: #0ff2da;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
 }
 
 /*alert*/
 .alert{
   color: red;
-  font-size: 25px;
+  font-size: 15px;
+  margin-left:20px;
+}
+.alert:first-child {
+  margin-top: 20px;
 }
 
 /*task complete*/
@@ -149,9 +196,9 @@ footer{
 	bottom:0;
 	padding: 10px;
 	margin: 10px;
-	background-color: gray;
+	background-color: #5fbcd1;
 	border-radius: 200%;
-	border: 3px solid #73AD21;
+	border: 3px solid #0ff2da;
 }
 
 .half {

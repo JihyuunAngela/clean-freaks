@@ -1,6 +1,6 @@
 <%- include('partials/subheader') -%>
 
-<main class="loginsignup">
+<main>
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
@@ -9,11 +9,10 @@
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
-      <form action="/login" class ="inputdata" method="POST">
+      <form action="/login" class ="formlogin inputdata" method="POST">
+        <h2 class="headings">Login</h2>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input
             type="email"
             class="form-control"
