@@ -13,7 +13,7 @@
             <p>No tasks today.</p>
         <% } else {%>
         <ul>
-            <% for(let i=0; i < lists[j].3; i++) {%>
+            <% for(let i=0; i < lists[j].length; i++) {%>
                 <li class="item" data-id='<%=lists[j][i]._id%>'>
                     <% if(lists[j][i].completed === true) {%>
                         <span class='task completed'><%= lists[j][i].todoItem %></span>
