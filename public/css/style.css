@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
 main, footer {
   font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
 }
@@ -21,7 +22,7 @@ header .title {
   font-size: 120px;
   text-align: center;
   line-height: 100px;
-  padding-top: 130px;
+  padding-top: 150px;
   padding-bottom: 50px;
   margin: 0;
 }
@@ -94,7 +95,7 @@ header #logout input:hover {
 footer{
   display: flex;
   justify-content: flex-end;
-  padding-right: 30px;
+  padding: 10px 30px 10px 0;
 }
 
 /*index*/
@@ -107,10 +108,12 @@ footer{
   text-align: center;
 
 }
-.about div h2 {
+.headings {
   font-weight: 900;
   font-size: 40px;
+  margin: 0;
   text-decoration: underline;
+  text-align: center;
 }
 .about div p {
   font-size: 30px;
@@ -126,20 +129,154 @@ footer{
   color: #5fbcd1;
 }
 /*login-signup form*/
-.loginsignup div .inputdata {
-  margin: 20px 50px;
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+.formlogin{
+  font-size: 25px;
+  margin: 20px;
+  padding: 20px 30px;
+  border: 2px dotted #0ff2da;
+  display: flex;
+  flex-direction: column;
+}
+.formlogin .headings {
+  padding-bottom: 30px;
+}
+.formlogin div {
+  padding: 10px;
+}
+.form-text {
+  font-size: 15px;
+  color: #5fbcd1;
+}
+.formlogin div input, .exampleInputEmail1, .exampleInputPassword1 {
+  background-color: white;
+  border: 1px solid #818181;
+  color: #111;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin-left: 5px;
+  padding: 5px;
+}
+.formlogin button, .otherbutton {
+  margin: 20px;
+  padding: 5px;
+  background-color: #0ff2da;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
 }
 
 /*alert*/
 .alert{
   color: red;
+  font-size: 15px;
+  margin-left:20px;
+}
+.alert:first-child {
+  margin-top: 20px;
+}
+
+/*loginpage*/
+.maincontainer{
+  margin: 30px 0;
+}
+.maincontainer h2 {
+  margin: 0 0 0 50px;
   font-size: 25px;
+}
+.maincontainer h1 {
+  margin: 0 0 0 50px;
+  font-size: 50px;
+  text-align: center;
+}
+.addbutton a{
+  color: #5fbcd1;
+  background-color:white;
+  font-size: 40px;
+}
+.category {
+  font-size: 25px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.maincontainer h3 {
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 40px;
+  background-color: white;
+}
+.box {
+  background-color: #0ff2db;
+  padding: 10px;
+  margin: 10px;
+  width: 30%;
+  height: 350px;
+}
+.box p , .box ul li span, .box a {
+  font-size: 18px;
+  color: black;
+  padding-left: 10px;
+}
+.box p {
+  margin: 0;
+}
+.jsutify-end {
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+}
+.box a:hover {
+  color: white;
+}
+#taskcomment {
+  font-size: 15px;
+  font-style: italic;
+  color: #818181;
 }
 
 /*task complete*/
 .completed {
 	color: gray;
 	text-decoration: line-through;
+}
+/*add,edit*/
+.inputforms, .headingB {
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+  margin-left: 50px;
+  text-align: center;
+}
+.headingB {
+  font-size: 40px;
+  padding: 5px;
+  text-decoration: underline;
+}
+.inputforms {
+  font-size: 25px;
+
+}
+#todoItem, #dueDate, #comment, #cleaningArea {
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+}
+
+/*task*/
+.task {
+  cursor: pointer;
 }
 
 /*scroll up button*/
@@ -149,9 +286,9 @@ footer{
 	bottom:0;
 	padding: 10px;
 	margin: 10px;
-	background-color: gray;
+	background-color: #5fbcd1;
 	border-radius: 200%;
-	border: 3px solid #73AD21;
+	border: 3px solid #0ff2da;
 }
 
 .half {
@@ -214,4 +351,14 @@ header .menuicon {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+@media screen and (max-width: 1400px) {
+  .box {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .box {
+    width: 100%;
+  }
 }

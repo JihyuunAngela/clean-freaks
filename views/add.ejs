@@ -1,9 +1,9 @@
 <%- include('partials/header') -%>
 
-<h2>Add a task</h2>
+<h2 class="headingB">Add a task</h2>
 
 <div>
-  <form action="/todos/createTodo" method="POST">
+  <form action="/todos/createTodo"class="inputforms" method="POST">
     <div class="mb-3">
       <label for="cleaningArea" class="form-label">Cleaning Area</label>
       <select id="cleaningArea" name="cleaningArea">
@@ -27,7 +27,7 @@
       <label for="comment" class="form-label">Comment</label>
       <textarea class="form-control" id="comment" name="comment"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+    <button type="submit" class="otherbutton btn btn-primary" value="Upload">Submit</button>
   </form>
 </div>
 
