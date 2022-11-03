@@ -14,25 +14,29 @@
                 <p>No tasks today.</p>
             <% } else {%>
             <ul>
-                <% for(let i=0; i < lists[j].length; i++) {%>
+                <% for(let i=0; i < 3; i++) {%>
                     <li class="item" data-id='<%=lists[j][i]._id%>'>
                         <% if(lists[j][i].completed === true) {%>
                             <span class='task completed'><%= lists[j][i].todoItem %></span>
                             <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
                             <span class='fa fa-trash'></span><br>
-                            <span id="taskcomment" class='task completed'>Comment: <%= lists[j][i].comment %></span>        
+                            <% if (lists[j][i].comment) { %>
+                                <span class='task completed taskcomment'>Comment: <%= lists[j][i].comment %></span>  
+                            <% } %>
                         <% }else{ %>
                             <span class="task"><%= lists[j][i].todoItem %></span>
                             <a href="/todos/edit/<%=lists[j][i]._id%>"><span class="fa-solid fa-pen-to-square"></span></a>
                             <span class='fa fa-trash'></span><br>
-                            <span id="taskcomment" class='task'>Comment: <%= lists[j][i].comment %></span>   
+                            <% if (lists[j][i].comment) { %>
+                                <span class='task taskcomment'>Comment: <%= lists[j][i].comment %></span>  
+                            <% } %>  
                         <% } %>
                     </li>
                 <% } %>
             
                 </ul>
                 <% } %>
-                <a class="jsutify-end" href="/todos/<%= cleaningArea[j]%>">more &#8594;</a>
+                <a class="justify-end" href="/todos/<%= cleaningArea[j]%>">more &#8594;</a>
         </div>
     <% } %>
     </div>

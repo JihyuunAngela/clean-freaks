@@ -6,9 +6,12 @@ module.exports = {
     try {
 
       if (req.user) {
-        let today  = new Date();
-        let todayDate = today.toISOString().slice(0, 10)
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        let today  = new Date();
+        let day = String(today.getDate()).padStart( 2, '0')
+        let month = String(today.getMonth() + 1).padStart( 2, '0')
+        let year = today.getFullYear();
+        let todayDate = `${year}-${month}-${day}`;
 
         let todosOther = await Todo.find( {cleaningArea: "other", user: req.user.id, dueDate: todayDate} ).lean()
         let todosBedroom = await Todo.find( {cleaningArea: "bedroom", user: req.user.id, dueDate: todayDate} ).lean()
@@ -17,8 +20,8 @@ module.exports = {
         let todosDining = await Todo.find( {cleaningArea: "dining room", user: req.user.id, dueDate: todayDate} ).lean()
         let todosKitchen = await Todo.find( {cleaningArea: "kitchen", user: req.user.id, dueDate: todayDate} ).lean()
 
-        const cleaningArea = ["bedroom", "bathroom", "kitchen", "living room", "dining room", "other"]
-        const lists = [todosBedroom, todosBathroom, todosKitchen, todosLiving, todosDining, todosOther]
+        const cleaningArea = ["bathroom", "bedroom", "dining room", "kitchen", "living room", "other"]
+        const lists = [todosBathroom, todosBedroom, todosDining, todosKitchen, todosLiving, todosOther]
 
         console.log(todosDining)
         res.render("home.ejs", { 

@@ -114,7 +114,10 @@ module.exports = {
       let todos = await Todo.find( {cleaningArea: req.params.area, user: req.user} )
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       let today  = new Date();
-      let todayDate = today.toISOString().slice(0, 10)
+      let day = String(today.getDate()).padStart( 2, '0')
+      let month = String(today.getMonth() + 1).padStart( 2, '0')
+      let year = today.getFullYear();
+      let todayDate = `${year}-${month}-${day}`;
 
       let due = await Todo.find( {
         cleaningArea: req.params.area, 
@@ -125,7 +128,7 @@ module.exports = {
       let futureDate = await Todo.find( {
         cleaningArea: req.params.area, 
         user: req.user,
-        dueDate: {$ne : todayDate},
+        dueDate: {$gt: todayDate},
       } ).sort({dueDate: 1})
 
       res.render("cleaningArea.ejs", {

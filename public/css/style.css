@@ -224,7 +224,7 @@ footer{
   width: 30%;
   height: 350px;
 }
-.box p , .box ul li span, .box a {
+.box p, .box ul li span, .box a {
   font-size: 18px;
   color: black;
   padding-left: 10px;
@@ -232,7 +232,7 @@ footer{
 .box p {
   margin: 0;
 }
-.jsutify-end {
+.justify-end {
   font-size: 20px;
   font-weight: 900;
   display: flex;
@@ -242,18 +242,18 @@ footer{
 .box a:hover {
   color: white;
 }
-#taskcomment {
+.item span.taskcomment {
   font-size: 15px;
   font-style: italic;
   color: #818181;
 }
 
 /*task complete*/
-.completed {
+.item span.completed {
 	color: gray;
 	text-decoration: line-through;
 }
-/*add,edit*/
+/*add,edit,delete*/
 .inputforms, .headingB {
   font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
   margin-left: 50px;
@@ -272,6 +272,12 @@ footer{
   margin: 10px;
   font-size: 20px;
   font-family: 'Patrick Hand', 'Courier New', Courier, monospace;
+}
+.fa-trash {
+  cursor: pointer;
+}
+.fa-pen-to-square {
+  color: black;
 }
 
 /*task*/
@@ -361,4 +367,10 @@ header .menuicon {
   .box {
     width: 100%;
   }
+}
+
+/* CLEANING AREA PAGE */
+
+.areaTitle {
+  text-transform: uppercase;
 }
